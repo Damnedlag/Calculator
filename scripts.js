@@ -100,5 +100,5 @@ const equals = document.getElementById('is=')
 equals.addEventListener('click', (e) => {
     displayedNumber = Number(display.textContent)
     operate(storedNumber, operator, displayedNumber)
-    display.textContent = solution
+    display.textContent =  parseFloat(solution.toFixed(10))
 })
