@@ -15,6 +15,7 @@ divide = (a, b) => {
 }
 
 operate = (a, ops, b) => {
+    if (a === 1, ops === '+', b === 1) alert("Ádám & Gabica together forever :)")
     if (ops === '+') solution = add(a, b)
     else if (ops === '-') solution = substract(a, b)
     else if (ops === 'x') solution = multiply(a, b)
@@ -80,8 +81,8 @@ operands.forEach((button) => {
 })
 })
 
-document.getElementById('isCE').addEventListener('click', (e) => {displayedNumber = 0; display.textContent = 0; solution = 0})
-document.getElementById('isC').addEventListener('click', (e) => {display.textContent = 0})
+document.getElementById('isCE').addEventListener('click', (e) => {display.textContent = 0})
+document.getElementById('isC').addEventListener('click', (e) => {displayedNumber = 0; display.textContent = 0; storedNumber = 0; solution = 0})
 document.getElementById('is⌫').addEventListener('click', (e) => {display.textContent = display.textContent.substring(0, display.textContent.length - 1)})
 document.getElementById('is.').addEventListener('click', (e) => {if (!display.textContent.includes('.')) display.textContent = display.textContent + '.'})
 document.getElementById('is+/-').addEventListener('click', (e) => {if (display.textContent[0] == '-') display.textContent = display.textContent.substring(1); else display.textContent = '-'.concat(display.textContent)})
@@ -100,5 +101,6 @@ const equals = document.getElementById('is=')
 equals.addEventListener('click', (e) => {
     displayedNumber = Number(display.textContent)
     operate(storedNumber, operator, displayedNumber)
-    display.textContent =  parseFloat(solution.toFixed(10))
+    if (solution === "Ádám & Gabica together forever :)") display.textContent = solution
+    else display.textContent =  parseFloat(solution.toFixed(10))
 })
