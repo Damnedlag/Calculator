@@ -1,0 +1,15 @@
+#buttons, #display {
+    margin: 15px;
+}
+
+#display {
+    width: 130px;
+    text-align: right;
+}
+
+button {
+    display: inline-block;
+    margin: 2px;
+    vertical-align: top;
+    width: 50px;
+}
