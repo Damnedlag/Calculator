@@ -15,7 +15,7 @@ divide = (a, b) => {
 }
 
 operate = (a, ops, b) => {
-    if (a === 1, ops === '+', b === 1) alert("Ádám & Gabica together forever :)")
+    if (a === 1 && ops === '+' && b === 1) alert("Ádám & Gabica together forever :)")
     if (ops === '+') solution = add(a, b)
     else if (ops === '-') solution = substract(a, b)
     else if (ops === 'x') solution = multiply(a, b)
@@ -91,9 +91,10 @@ const operators = document.querySelectorAll('#isplus, #is-, #is÷, #isx')
 operators.forEach((button) => {
     button.addEventListener('click', (e) => {
         if (!solution) storedNumber = Number(display.textContent)
-        else storedNumber = solution
+        else if (solution === Number(display.textContent)) storedNumber = solution
+        else storedNumber = Number(display.textContent)
         operator = button.textContent
-        displayedNumber = 0; display.textContent = 0;
+        displayedNumber = 0; display.textContent = 0
         })
     })
 
@@ -103,4 +104,5 @@ equals.addEventListener('click', (e) => {
     operate(storedNumber, operator, displayedNumber)
     if (solution === "Ádám & Gabica together forever :)") display.textContent = solution
     else display.textContent =  parseFloat(solution.toFixed(10))
+    storedNumber = 0;
 })
